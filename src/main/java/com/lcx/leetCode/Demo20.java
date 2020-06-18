@@ -7,14 +7,14 @@ public class Demo20 {
     private HashMap<Character, Character> map;
 
     public Demo20() {
-        this.map = new HashMap<>();
+        this.map = new HashMap<Character, Character>();
         map.put(')', '(');
-        map.put('{', '}');
-        map.put('[', ']');
+        map.put('}', '{');
+        map.put(']', '[');
     }
 
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> stack = new Stack<Character>();
 
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
@@ -33,7 +33,7 @@ public class Demo20 {
     }
 
     public static void main(String[] args) {
-        String s = "((()))";
+        String s = "()[]{}";
         System.out.println(new Demo20().isValid(s));
     }
 }
