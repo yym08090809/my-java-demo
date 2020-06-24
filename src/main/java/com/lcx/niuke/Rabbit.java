@@ -24,7 +24,9 @@ public class Rabbit {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int mountCount = scanner.nextInt();
-        System.out.println(getTotalCount(mountCount));
+        while (scanner.hasNextInt()) {
+            int mountCount = scanner.nextInt();
+            System.out.println(getTotalCount(mountCount));
+        }
     }
 }
