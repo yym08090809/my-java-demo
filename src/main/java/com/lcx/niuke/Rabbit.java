@@ -5,12 +5,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Rabbit {
-    /**
-     * 统计出兔子总数。
-     *
-     * @param monthCount 第几个月
-     * @return 兔子总数
-     */
     public static int getTotalCount(int monthCount) {
         Map<Integer, Integer> map = new HashMap<>();
         int f1=1,f2=1;
