@@ -3,7 +3,7 @@ package com.lcx.leetCode;
 import java.util.ArrayList;
 
 public class Demo66 {
-    public static Integer[] plusOne(int[] digits) {
+    public static Integer[] plusOne1(int[] digits) {
         StringBuffer sb = new StringBuffer();
         for (int digit : digits) {
             sb.append(digit);
@@ -19,11 +19,22 @@ public class Demo66 {
         }
         Integer[] array = list.toArray(new Integer[list.size()]);
         return array;
+
+    }
+    public static int[] plusOne(int[] digits) {
+        for (int i = digits.length-1; i >=0 ; i--) {
+            digits[i]++;
+            digits[i] = digits[i] % 10;
+            if(digits[i] != 0) return digits;
+        }
+        digits = new int[digits.length+1];
+        digits[0] = 1;
+        return digits;
     }
 
     public static void main(String[] args) {
-        int[] arr = {9,9,9};
-        Integer[] ints = plusOne(arr);
+        int[] arr = {9,9,1};
+        int[] ints = plusOne(arr);
         for (int anInt : ints) {
             System.out.println(anInt);
         }
